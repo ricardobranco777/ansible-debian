@@ -1,0 +1,22 @@
+---
+- name: Install Docker repo
+  block:
+    - name: Install Docker gpg key
+      get_url:
+        url: https://download.docker.com/linux/debian/gpg
+        dest: /etc/apt/keyrings/docker.asc
+        checksum: sha256:1500c1f56fa9e26b9b8f42452a553675796ade0807cdce11975eb98170b3a570
+
+    - name: Add Docker repo
+      apt_repository:
+        repo: "deb [arch=arm64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian bookworm stable"
+        state: present
+        filename: docker
+  tags: ['apt', 'docker']
+
+- name: Install Docker packages
+  apt:
+    name:
+      - docker-ce
+    state: present
+  tags: ['apt', 'docker']

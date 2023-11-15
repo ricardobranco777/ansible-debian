@@ -1,0 +1,81 @@
+---
+- name: Add backports
+  apt_repository:
+    repo: "deb http://deb.debian.org/debian bookworm-backports main"
+    state: present
+    filename: backports
+  tags: ['apt']
+
+- name: Update cache
+  apt:
+    update_cache: yes
+  tags: ['apt']
+
+- name: Install packages
+  apt:
+    name:
+      - avahi-utils
+      - bridge-utils
+      - cifs-utils
+      - cryptsetup
+      - curl
+      - dnsutils
+      - e2fsprogs
+      - fakeroot
+      - gawk
+      - git
+      - iptables
+      - jq
+      - libarchive-tools
+      - libnss3-tools
+      - lsscsi
+      - make
+      - mc
+      - mtr
+      - netcat-openbsd
+      - net-tools
+      - nmap
+      - patch
+      - podman
+      - python3-dev
+      - python3-pip
+      - rclone
+      - rsync
+      - screen
+      - sg3-utils
+      - smartmontools
+      - socat
+      - strace
+      - traceroute
+      - unzip
+      - vim
+      - wget
+      - whois
+      - xfsprogs
+    state: present
+  tags: ['apt']
+
+- name: Install software from Backports
+  apt:
+    name:
+      - golang-go
+    state: present
+    default_release: bookworm-backports
+  tags: ['apt']
+
+- name: Uninstall packages
+  apt:
+    name:
+      - chromium
+      - cups
+      - firefox
+      - saned
+      - thunderbird
+    state: absent
+    purge: true
+  tags: ['apt']
+
+- name: Run apt autoremove
+  apt:
+    autoremove: yes
+  tags: ['apt']
