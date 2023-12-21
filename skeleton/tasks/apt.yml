@@ -78,4 +78,5 @@
 - name: Run apt autoremove
   apt:
     autoremove: yes
+    purge: true
   tags: ['apt']
