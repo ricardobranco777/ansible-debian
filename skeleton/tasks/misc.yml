@@ -7,3 +7,17 @@
     group: root
     mode: 0644
   tags: ['vim']
+
+- name: Support Bluetooth speakers
+  lineinfile:
+    path: /etc/exports
+    line: "Experimental = true"
+  tags: ['bluetooth']
+
+- name: adding user ricardo to group libvirt
+  user:
+    name: ricardo
+    groups: bluetooth
+    append: yes
+  become: yes
+  tags: ['bluetooth']
