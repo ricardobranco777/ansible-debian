@@ -1,3 +1,8 @@
+- name: Get dpkg architecture
+  command: "dpkg --print-architecture"
+  register: dpkg_architecture
+  changed_when: false
+
 - name: Get latest Go version
   shell: "curl -s https://go.dev/VERSION?m=text | awk 'NR == 1 { print $1 }'"
   args:
@@ -26,7 +31,7 @@
   when: go_installed.stat.exists and current_go_version.stdout != latest_go_version.stdout
 
 - name: Download and install the latest Go version
-  shell: "curl -sL https://go.dev/dl/{{ latest_go_version.stdout }}.linux-arm64.tar.gz | tar -zxf - -C /usr/local/"
+  shell: "curl -sL https://go.dev/dl/{{ latest_go_version.stdout }}.linux-{{ dpkg_architecture.stdout }}.tar.gz | tar -zxf - -C /usr/local/"
   args:
     executable: /bin/bash
   when: not go_installed.stat.exists or go_installed.stat.islnk or go_installed.stat.exists and current_go_version.stdout != latest_go_version.stdout

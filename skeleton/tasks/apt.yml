@@ -1,15 +1,15 @@
 ---
 - name: Add backports
   apt_repository:
-    repo: "deb http://deb.debian.org/debian bookworm-backports main"
+    repo: "deb http://deb.debian.org/debian {{ ansible_distribution_release }}-backports main"
     state: present
     filename: backports
   tags: ['apt']
 
-- name: Update cache
-  apt:
-    update_cache: yes
-  tags: ['apt']
+#- name: Update cache
+#  apt:
+#    update_cache: yes
+#  tags: ['apt']
 
 - name: Install packages
   apt:
@@ -60,7 +60,7 @@
 #    name:
 #      - golang-go
 #    state: present
-#    default_release: bookworm-backports
+#    default_release: {{ ansible_distribution_release }}-backports
 #  tags: ['apt']
 
 - name: Uninstall packages
