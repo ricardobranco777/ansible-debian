@@ -7,3 +7,11 @@
   with_items:
     - "cgroup_enable=memory"
   tags: ['rpi']
+
+- name: Install RPi software
+  apt:
+    name:
+      - libraspberrypi-bin
+    state: present
+  when: "ansible_distribution == 'Ubuntu'"
+  tags: ['rpi']

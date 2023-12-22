@@ -6,4 +6,9 @@
 
   roles:
     - role: skeleton
+    - role: debian
+      when: "ansible_distribution == 'Debian'"
+    - role: ubuntu
+      when: "ansible_distribution == 'Ubuntu'"
     - role: media
+      when: "ansible_distribution == 'Debian'"

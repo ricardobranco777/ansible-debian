@@ -1,8 +1,10 @@
 
-I use this playbook to install the following on my Raspberry Pi 4b running Debian 12:
+I use this playbook to install the following on my Raspberry Pi 4b & 5 running Ubuntu 23.10 & Debian 12:
  - Docker CE
  - Podman
  - NFS / Samba
+ - Golang from upstream
+ - vlc to connect to BlueTooth speakers
 
 Check:
 `ansible-playbook -v -C -i inventory main.yml`

@@ -15,7 +15,7 @@
     insertafter: "^#Experimental = false"
   tags: ['bluetooth']
 
-- name: adding user ricardo to group libvirt
+- name: adding user ricardo to group bluetooth
   user:
     name: ricardo
     groups: bluetooth

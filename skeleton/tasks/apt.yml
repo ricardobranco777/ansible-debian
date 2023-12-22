@@ -1,11 +1,4 @@
 ---
-- name: Add backports
-  apt_repository:
-    repo: "deb http://deb.debian.org/debian {{ ansible_distribution_release }}-backports main"
-    state: present
-    filename: backports
-  tags: ['apt']
-
 #- name: Update cache
 #  apt:
 #    update_cache: yes
@@ -56,20 +49,14 @@
     state: present
   tags: ['apt']
 
-#- name: Install software from Backports
-#  apt:
-#    name:
-#      - golang-go
-#    state: present
-#    default_release: {{ ansible_distribution_release }}-backports
-#  tags: ['apt']
-
 - name: Uninstall packages
   apt:
     name:
       - chromium
       - cups
       - firefox
+      - libreoffice-*
+      - rhythmbox
       - saned
       - thunderbird
     state: absent

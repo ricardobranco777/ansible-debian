@@ -1,0 +1,16 @@
+---
+- name: Don't keep back package updates
+  copy:
+    src: apt/88custom
+    dest: /etc/apt/apt.conf.d/88custom
+    owner: root
+    group: root
+    mode: 0644
+  tags: ['apt']
+
+- name: Install packages
+  apt:
+    name:
+      - ltrace
+    state: present
+  tags: ['apt']
