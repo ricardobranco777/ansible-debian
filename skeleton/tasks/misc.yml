@@ -10,7 +10,7 @@
 
 - name: Support Bluetooth speakers
   lineinfile:
-    path: /etc/exports
+    path: /etc/bluetooth/main.conf
     line: "Experimental = true"
   tags: ['bluetooth']
 
