@@ -43,7 +43,6 @@
       - rsync
       - screen
       - sg3-utils
-      - smartmontools
       - socat
       - strace
       - traceroute
