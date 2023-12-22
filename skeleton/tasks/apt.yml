@@ -55,13 +55,13 @@
     state: present
   tags: ['apt']
 
-- name: Install software from Backports
-  apt:
-    name:
-      - golang-go
-    state: present
-    default_release: bookworm-backports
-  tags: ['apt']
+#- name: Install software from Backports
+#  apt:
+#    name:
+#      - golang-go
+#    state: present
+#    default_release: bookworm-backports
+#  tags: ['apt']
 
 - name: Uninstall packages
   apt:
