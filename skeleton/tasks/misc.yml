@@ -12,6 +12,7 @@
   lineinfile:
     path: /etc/bluetooth/main.conf
     line: "Experimental = true"
+    insertafter: "^#Experimental = false"
   tags: ['bluetooth']
 
 - name: adding user ricardo to group libvirt
