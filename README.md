@@ -11,3 +11,6 @@ Check:
 
 Run with:
 `ansible-playbook -v -i inventory main.yml`
+
+NOTES:
+  - passwordless sudo for pi user is disabled. Make sure you set a password for root before running this.
