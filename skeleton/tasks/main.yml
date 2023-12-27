@@ -5,3 +5,4 @@
 - include_tasks: golang.yml
 - include_tasks: rpi.yml
   when: "ansible_architecture == 'aarch64'"
+- include_tasks: root.yml
