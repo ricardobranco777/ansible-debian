@@ -1,13 +1,4 @@
 ---
-- name: Make vim work
-  copy:
-    src: vimrc
-    dest: /root/.vimrc
-    owner: root
-    group: root
-    mode: 0644
-  tags: ['vim']
-
 - name: Support Bluetooth speakers
   lineinfile:
     path: /etc/bluetooth/main.conf
