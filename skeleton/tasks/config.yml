@@ -1,0 +1,9 @@
+---
+- name: "Get current systemd target"
+  command: "systemctl get-default"
+  changed_when: false
+  register: systemd_target
+
+- name: "Set systemd target to multi-user"
+  command: "systemctl set-default multi-user.target"
+  when: "'multi-user' not in systemd_target.stdout"
