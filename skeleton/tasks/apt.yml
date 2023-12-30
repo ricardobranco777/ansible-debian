@@ -58,6 +58,7 @@
       - libreoffice-*
       - rhythmbox
       - saned
+      - sssd
       - thunderbird
     state: absent
     purge: true
