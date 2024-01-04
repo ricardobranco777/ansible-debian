@@ -16,6 +16,7 @@
       - e2fsprogs
       - fakeroot
       - gawk
+      - gh
       - git
       - iptables
       - jq
