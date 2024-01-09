@@ -57,6 +57,7 @@
       - cups
       - firefox
       - libreoffice-*
+      - qemu-utils
       - rhythmbox
       - saned
       - sssd
