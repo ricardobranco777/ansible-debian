@@ -18,6 +18,7 @@
       - gawk
       - gh
       - git
+      - gnutls-bin
       - iptables
       - jq
       - libarchive-tools
