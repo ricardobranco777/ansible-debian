@@ -8,6 +8,7 @@
   apt:
     name:
       - avahi-utils
+      - bpfcc-tools
       - bridge-utils
       - cifs-utils
       - cryptsetup
