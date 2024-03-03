@@ -23,6 +23,7 @@
       - iptables
       - jq
       - libarchive-tools
+      - libbsd-dev
       - libnss3-tools
       - lsscsi
       - make
