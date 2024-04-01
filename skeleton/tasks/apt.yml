@@ -44,6 +44,7 @@
       - sg3-utils
       - socat
       - strace
+      - tmux
       - traceroute
       - unzip
       - vim
