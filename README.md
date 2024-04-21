@@ -1,5 +1,5 @@
 
-I use this playbook to install the following on my Raspberry Pi 4b & 5 running Ubuntu 23.10 & Debian 12:
+I use this playbook to install the following on my Raspberry Pi 4b & 5 running Ubuntu 24.04 & Debian 12:
  - Docker CE
  - Podman
  - NFS / Samba
