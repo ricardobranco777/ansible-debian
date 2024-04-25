@@ -12,7 +12,6 @@
   apt:
     name:
       - libraspberrypi-bin
-      - linux-modules-extra-raspi
     state: present
   when: "ansible_distribution == 'Ubuntu'"
   tags: ['rpi']
