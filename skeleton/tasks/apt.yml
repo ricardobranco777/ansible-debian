@@ -62,6 +62,7 @@
       - cups
       - firefox
       - libreoffice-*
+      - protection-domain-mapper
       - qemu-utils
       - rhythmbox
       - saned
