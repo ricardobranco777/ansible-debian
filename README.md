@@ -21,3 +21,11 @@ Run with:
 
 NOTES:
   - passwordless sudo for pi user is disabled. Make sure you set a password for root before running this.
+
+Remove snapd from Ubuntu:
+
+```
+sudo snap remove thunderbird firefox snapd-desktop-integration snap-store gtk-common-themes gnome-42-2204 core22 bare snapd
+sudo apt remove -y snapd
+sudo rm -rf /var/lib/snapd/
+```
