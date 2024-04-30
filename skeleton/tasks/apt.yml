@@ -42,6 +42,7 @@
       - rsync
       - screen
       - sg3-utils
+      - skopeo
       - socat
       - strace
       - tmux
