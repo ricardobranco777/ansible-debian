@@ -7,3 +7,12 @@
     group: root
     mode: 0600
   tags: ['ssh']
+
+- name: Secure permissions for /etc/ssh/sshd_config.d
+  file:
+    path: /etc/ssh/sshd_config.d
+    state: directory
+    owner: root
+    group: root
+    mode: '0500'
+  tags: ['ssh']
