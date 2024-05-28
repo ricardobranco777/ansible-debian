@@ -1,0 +1,9 @@
+---
+- name: Configure ZFS
+  copy:
+    src: zfs.conf
+    dest: /etc/dkms/zfs.conf
+    owner: root
+    group: root
+    mode: 0644
+  tags: ['zfs']
