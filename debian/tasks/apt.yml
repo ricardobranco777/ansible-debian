@@ -6,6 +6,15 @@
     filename: backports
   tags: ['apt']
 
+- name: Use systemd from backports
+  copy:
+    src: 01_zfs
+    dest: /etc/apt/preferences.d/01_systemd
+    owner: root
+    group: root
+    mode: 0644
+  tags: ['apt']
+
 #- name: Install software from Backports
 #  apt:
 #    name:
