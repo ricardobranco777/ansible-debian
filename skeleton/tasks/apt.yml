@@ -12,6 +12,7 @@
       - bridge-utils
       - cifs-utils
       - cryptsetup
+      - cryptsetup-initramfs
       - curl
       - dnsutils
       - e2fsprogs
