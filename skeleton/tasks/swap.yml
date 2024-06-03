@@ -9,7 +9,7 @@
     - dphys-swapfile.service
     - mkswap.service
   failed_when: false
-  tags: ['zswap']
+  tags: ['zram']
 
 - name: Turn off swap and remove swap files if they exist
   ansible.builtin.command:
@@ -20,10 +20,10 @@
     - /var/swap
   changed_when: true
   ignore_errors: true
-  tags: ['zswap']
+  tags: ['zram']
 
 - name: Install systemd-zram-generator
   apt:
     name: systemd-zram-generator
     state: present
-  tags: ['zswap', 'apt']
+  tags: ['zram', 'apt']
