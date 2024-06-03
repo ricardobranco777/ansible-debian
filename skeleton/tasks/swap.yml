@@ -1,0 +1,29 @@
+---
+- name: Disable swap service
+  systemd:
+    name: "{{ item }}"
+    masked: yes
+    enabled: no
+    state: stopped
+  loop:
+    - dphys-swapfile.service
+    - mkswap.service
+  failed_when: false
+  tags: ['zswap']
+
+- name: Turn off swap and remove swap files if they exist
+  ansible.builtin.command:
+    cmd: swapoff "{{ item }}" && rm -f "{{ item }}"
+    removes: "{{ item }}"
+  loop:
+    - /swapfile
+    - /var/swap
+  changed_when: true
+  ignore_errors: true
+  tags: ['zswap']
+
+- name: Install systemd-zram-generator
+  apt:
+    name: systemd-zram-generator
+    state: present
+  tags: ['zswap', 'apt']
