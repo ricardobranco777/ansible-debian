@@ -6,5 +6,6 @@
 - include_tasks: golang.yml
 - include_tasks: python.yml
 - include_tasks: security.yml
+- include_tasks: yubikey.yml
 - include_tasks: rpi.yml
   when: "ansible_architecture == 'aarch64'"

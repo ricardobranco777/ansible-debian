@@ -1,0 +1,19 @@
+---
+- name: Install Yubikey packages
+  apt:
+    name:
+      - fido2-tools
+      - libpam-yubico
+      - yubikey-manager
+      - yubikey-personalization
+    state: present
+  tags: ['apt', 'yubikey']
+
+- name: Add custom udev rules for Yubikey
+  copy:
+    src: 70-u2f.rules
+    dest: /etc/udev/rules.d/70-u2f.rules
+    owner: root
+    group: root
+    mode: 0644
+  tags: ['yubikey']
