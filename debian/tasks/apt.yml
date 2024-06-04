@@ -8,7 +8,7 @@
 
 - name: Use systemd from backports
   copy:
-    src: 01_zfs
+    src: 01_systemd
     dest: /etc/apt/preferences.d/01_systemd
     owner: root
     group: root
