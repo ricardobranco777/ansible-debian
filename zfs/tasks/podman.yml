@@ -1,0 +1,9 @@
+---
+- name: Use VFS for podman on ZFS
+  copy:
+    src: containers.conf
+    dest: /etc/containers/storage.conf
+    owner: root
+    group: root
+    mode: 0644
+  tags: ['zfs', 'podman']
