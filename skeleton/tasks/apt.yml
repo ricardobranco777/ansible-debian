@@ -8,6 +8,8 @@
   apt:
     name:
       - avahi-utils
+      - bc
+      - bison
       - bpfcc-tools
       - bridge-utils
       - cifs-utils
@@ -17,6 +19,7 @@
       - dnsutils
       - e2fsprogs
       - fakeroot
+      - flex
       - gawk
       - gh
       - git
@@ -26,6 +29,7 @@
       - libarchive-tools
       - libbsd-dev
       - libnss3-tools
+      - libssl-dev
       - lsscsi
       - make
       - mc
