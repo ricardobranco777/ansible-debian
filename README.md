@@ -25,7 +25,7 @@ NOTES:
 Remove snapd from Ubuntu:
 
 ```
-sudo snap remove thunderbird firefox snapd-desktop-integration snap-store gtk-common-themes gnome-42-2204 core22 bare snapd
+for s in canonical-livepatch firmware-updater thunderbird firefox snapd-desktop-integration snap-store gtk-common-themes gnome-42-2204 core22 bare snapd ; do sudo snap remove $s ; done
 sudo apt remove -y snapd
 sudo rm -rf /var/lib/snapd/
 ```
