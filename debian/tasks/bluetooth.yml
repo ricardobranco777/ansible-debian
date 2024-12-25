@@ -6,10 +6,11 @@
     insertafter: "^#Experimental = false"
   tags: ['bluetooth']
 
-- name: adding user ricardo to group bluetooth
+- name: adding user to bluetooth group
   user:
-    name: ricardo
+    name: "{{ target_user }}"
     groups: bluetooth
     append: yes
   become: yes
+  when: target_user != "root"
   tags: ['bluetooth']
