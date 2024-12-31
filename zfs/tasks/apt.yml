@@ -6,7 +6,6 @@
     owner: root
     group: root
     mode: 0644
-  tags: ['apt', 'zfs']
 
 - name: Install ZFS packages
   apt:
@@ -18,4 +17,3 @@
     install_recommends: false
     update_cache: true
     state: present
-  tags: ['apt', 'zfs']

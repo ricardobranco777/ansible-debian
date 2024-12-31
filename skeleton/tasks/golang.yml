@@ -3,7 +3,6 @@
   command: "dpkg --print-architecture"
   register: dpkg_architecture
   changed_when: false
-  tags: ['golang']
 
 - name: Get latest Go version
   shell: "curl -s https://go.dev/VERSION?m=text | awk 'NR == 1 { print $1 }'"
@@ -11,13 +10,11 @@
     executable: /bin/bash
   register: latest_go_version
   changed_when: false
-  tags: ['golang']
 
 - name: Check if Go is installed
   stat:
     path: "/usr/local/go/bin/go"
   register: go_installed
-  tags: ['golang']
 
 - name: Check current Go version
   when: go_installed.stat.exists
@@ -27,21 +24,18 @@
   register: current_go_version
   ignore_errors: yes
   changed_when: false
-  tags: ['golang']
 
 - name: Remove existing Go installation if versions differ
   file:
     path: "/usr/local/go"
     state: absent
   when: go_installed.stat.exists and current_go_version.stdout != latest_go_version.stdout
-  tags: ['golang']
 
 - name: Download and install the latest Go version
   shell: "curl -sL https://go.dev/dl/{{ latest_go_version.stdout }}.linux-{{ dpkg_architecture.stdout }}.tar.gz | tar -zxpf - -C /usr/local/"
   args:
     executable: /bin/bash
   when: not go_installed.stat.exists or go_installed.stat.islnk or go_installed.stat.exists and current_go_version.stdout != latest_go_version.stdout
-  tags: ['golang']
 
 - name: Create /etc/profile.d/golang.sh
   copy:
@@ -50,4 +44,3 @@
     owner: root
     group: root
     mode: 0755
-  tags: ['golang']

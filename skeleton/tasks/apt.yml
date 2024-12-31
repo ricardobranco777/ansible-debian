@@ -2,7 +2,6 @@
 #- name: Update cache
 #  apt:
 #    update_cache: yes
-#  tags: ['apt']
 
 - name: Install packages
   apt:
@@ -55,7 +54,6 @@
       - whois
       - xfsprogs
     state: present
-  tags: ['apt']
 
 - name: Uninstall packages
   apt:
@@ -72,10 +70,8 @@
       - thunderbird
     state: absent
     purge: true
-  tags: ['apt']
 
 - name: Run apt autoremove
   apt:
     autoremove: yes
     purge: true
-  tags: ['apt']

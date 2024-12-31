@@ -6,7 +6,6 @@
     owner: root
     group: root
     mode: 0600
-  tags: ['ssh']
 
 - name: Secure permissions for /etc/ssh/sshd_config.d
   file:
@@ -15,7 +14,6 @@
     owner: root
     group: root
     mode: '0500'
-  tags: ['ssh']
 
 - name: Add AllowUsers configuration
   copy:
@@ -25,4 +23,3 @@
     owner: root
     group: root
     mode: '0600'
-  tags: ['ssh']

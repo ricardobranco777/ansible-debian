@@ -4,7 +4,6 @@
     path: /etc/bluetooth/main.conf
     line: "Experimental = true"
     insertafter: "^#Experimental = false"
-  tags: ['bluetooth']
 
 - name: adding user to bluetooth group
   user:
@@ -13,4 +12,3 @@
     append: yes
   become: yes
   when: target_user != "root"
-  tags: ['bluetooth']

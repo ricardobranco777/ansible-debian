@@ -6,7 +6,6 @@
     replace: '\1 {{ item }}'
   with_items:
     - "cgroup_enable=memory"
-  tags: ['rpi']
 
 - name: Install RPi software
   apt:
@@ -14,10 +13,8 @@
       - libraspberrypi-bin
     state: present
   when: "ansible_distribution == 'Ubuntu'"
-  tags: ['rpi']
 
 - name: Disable passwordless sudo for pi user
   file:
     path: /etc/sudoers.d/010_pi-nopasswd
     state: absent
-  tags: ['rpi']

@@ -4,7 +4,6 @@
     repo: "deb http://deb.debian.org/debian {{ ansible_distribution_release }}-backports main contrib"
     state: present
     filename: backports
-  tags: ['apt']
 
 - name: Use systemd from backports
   copy:
@@ -13,7 +12,6 @@
     owner: root
     group: root
     mode: 0644
-  tags: ['apt']
 
 #- name: Install software from Backports
 #  apt:
@@ -22,4 +20,3 @@
 #    state: present
 #    default_release: {{ ansible_distribution_release }}-backports
 #    update_cache: true
-#  tags: ['apt']

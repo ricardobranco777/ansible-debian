@@ -4,23 +4,19 @@
     name:
       - nfs-kernel-server
     state: present
-  tags: ['apt', 'nfs']
 
 - name: Configure /etc/hosts.allow
   lineinfile:
     path: /etc/hosts.allow
     line: "rpcbind mountd nfsd statd lockd rquotad idmapd : 127.0.0.1 {{ hosts_allow }}"
-  tags: ['nfs']
 
 - name: Configure /etc/hosts.deny
   lineinfile:
     path: /etc/hosts.deny
     line: "rpcbind mountd nfsd statd lockd rquotad idmapd : ALL"
-  tags: ['nfs']
 
 - name: Configure NFS exports
   lineinfile:
     path: /etc/exports
     line: "{{ export_directory }} *(ro,sync,no_subtree_check,root_squash,insecure)"
   notify: Restart NFS
-  tags: ['nfs']

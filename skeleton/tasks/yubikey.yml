@@ -7,7 +7,6 @@
       - yubikey-manager
       - yubikey-personalization
     state: present
-  tags: ['apt', 'yubikey']
 
 - name: Add custom udev rules for Yubikey
   copy:
@@ -16,4 +15,3 @@
     owner: root
     group: root
     mode: 0644
-  tags: ['yubikey']

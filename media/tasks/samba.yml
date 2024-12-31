@@ -4,7 +4,6 @@
     name:
       - samba
     state: present
-  tags: ['apt', 'samba']
 
 - name: Configure smb.conf
   template:
@@ -14,7 +13,6 @@
     group: root
     mode: 0644
   notify: Restart Samba
-  tags: ['samba']
 
 - name: Remove homes from Samba
   ini_file:
@@ -22,7 +20,6 @@
     section: homes
     state: absent
   notify: Restart Samba
-  tags: ['samba']
 
 - name: Remove printers from Samba
   ini_file:
@@ -30,7 +27,6 @@
     section: printers
     state: absent
   notify: Restart Samba
-  tags: ['samba']
 
 - name: Remove print$ from Samba
   ini_file:
@@ -38,4 +34,3 @@
     section: print$
     state: absent
   notify: Restart Samba
-  tags: ['samba']
