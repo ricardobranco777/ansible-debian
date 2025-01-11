@@ -23,6 +23,7 @@
       - iptables
       - jq
       - libarchive-tools
+      - libcap-ng-utils
       - libbsd-dev
       - libnss3-tools
       - lsscsi
