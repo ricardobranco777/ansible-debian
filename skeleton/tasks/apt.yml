@@ -27,6 +27,7 @@
       - libbsd-dev
       - libnss3-tools
       - lsscsi
+      - mandoc
       - make
       - mc
       - mtr
