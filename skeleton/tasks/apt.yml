@@ -61,7 +61,7 @@
   apt:
     name:
       - chromium-browser
-      - cups
+      - cups-*
       - firefox
       - libreoffice-*
       - protection-domain-mapper
