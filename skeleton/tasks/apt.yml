@@ -9,6 +9,7 @@
       - avahi-utils
       - bpfcc-tools
       - bridge-utils
+      - cgroup-tools
       - cifs-utils
       - cryptsetup
       - cryptsetup-initramfs
