@@ -43,7 +43,6 @@
       - python3-pip
       - rclone
       - rsync
-      - screen
       - sg3-utils
       - skopeo
       - socat
