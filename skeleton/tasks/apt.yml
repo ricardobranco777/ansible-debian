@@ -65,6 +65,7 @@
       - cups-*
       - firefox
       - libreoffice-*
+      - ntfs-3g
       - ppp
       - protection-domain-mapper
       - qemu-utils
