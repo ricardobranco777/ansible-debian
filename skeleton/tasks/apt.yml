@@ -65,6 +65,7 @@
       - cups-*
       - firefox
       - libreoffice-*
+      - ppp
       - protection-domain-mapper
       - qemu-utils
       - rhythmbox
