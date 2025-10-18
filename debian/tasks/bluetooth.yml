@@ -5,6 +5,12 @@
     line: "Experimental = true"
     insertafter: "^#Experimental = false"
 
+- name: Support Bluetooth speakers #2
+  lineinfile:
+    path: /etc/bluetooth/main.conf
+    line: "ControllerMode = bredr"
+    insertafter: "^#ControllerMode = dual"
+
 - name: adding user to bluetooth group
   user:
     name: "{{ target_user }}"
