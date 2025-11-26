@@ -1,0 +1,6 @@
+---
+- name: Uninstall useless systemd stuff
+  dnf:
+    name:
+      - systemd-timesyncd
+    state: absent

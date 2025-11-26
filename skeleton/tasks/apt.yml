@@ -10,6 +10,7 @@
       - bpfcc-tools
       - bridge-utils
       - cgroup-tools
+      - chrony
       - cifs-utils
       - cryptsetup
       - cryptsetup-initramfs
