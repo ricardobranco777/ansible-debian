@@ -47,6 +47,7 @@
       - rsync
       - sg3-utils
       - skopeo
+      - smartmontools
       - socat
       - strace
       - tmux
