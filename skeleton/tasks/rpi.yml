@@ -5,7 +5,7 @@
     regexp: '^([\w](?!.*\b{{ item }}\b).*)$'
     replace: '\1 {{ item }}'
   with_items:
-    - "cgroup_enable=memory"
+    - "cgroup_enable=memory swapaccount=1"
 
 - name: Install RPi software
   apt:
