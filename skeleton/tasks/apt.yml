@@ -37,6 +37,7 @@
       - netcat-openbsd
       - net-tools
       - nmap
+      - nvme-cli
       - patch
       - podman
       - procinfo
