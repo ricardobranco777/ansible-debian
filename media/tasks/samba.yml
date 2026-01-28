@@ -5,32 +5,10 @@
       - samba
     state: present
 
-- name: Configure smb.conf
-  template:
-    src: smb.conf.j2
+- name: Create smb.conf
+  copy:
+    src: smb.conf
     dest: /etc/samba/smb.conf
     owner: root
     group: root
-    mode: 0644
-  notify: Restart Samba
-
-- name: Remove homes from Samba
-  ini_file:
-    path: /etc/samba/smb.conf
-    section: homes
-    state: absent
-  notify: Restart Samba
-
-- name: Remove printers from Samba
-  ini_file:
-    path: /etc/samba/smb.conf
-    section: printers
-    state: absent
-  notify: Restart Samba
-
-- name: Remove print$ from Samba
-  ini_file:
-    path: /etc/samba/smb.conf
-    section: print$
-    state: absent
-  notify: Restart Samba
+    mode: 0600

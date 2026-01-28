@@ -8,3 +8,10 @@
   systemd:
     name: smbd
     state: restarted
+
+- name: Disable nmbd
+  systemd:
+    name: nmbd
+    state: stopped
+    enabled: false
+  ignore_errors: true
