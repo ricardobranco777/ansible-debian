@@ -24,6 +24,9 @@
       - gnutls-bin
       - gperf
       - iptables
+      - iputils-arping
+      - iputils-ping
+      - iputils-tracepath
       - jq
       - libarchive-tools
       - libcap-ng-utils
@@ -67,6 +70,7 @@
       - chromium-browser
       - cups-*
       - firefox
+      - inetutils-ping
       - libreoffice-*
       - ntfs-3g
       - ppp
