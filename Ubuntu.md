@@ -20,4 +20,5 @@ sudo apt purge firefox snapd
 # Remove uutils and use good ol' GNU
 sudo apt install --allow-remove-essential coreutils-from-gnu coreutils-from-uutils-
 sudo apt remove rust-coreutils
+echo rust-coreutils hold | sudo dpkg --set-selections
 ```
