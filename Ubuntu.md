@@ -3,8 +3,11 @@ Cheatsheet to remove Rust non-sense from Ubuntu 26.04:
 ```
 # Disable password feeback
 echo 'Defaults !pwfeedback' | sudo tee -a /etc/sudoers.d/nofeedback
-# Optional: Remove sudo-rs
+# Remove sudo-rs
 sudo apt remove -y sudo-rs
+# Enable insults
+echo Defaults insults | sudo tee -a /etc/sudoers.d/insults
+
 ```
 
 ```
@@ -14,11 +17,12 @@ sudo snap remove core24 bare
 sudo snap remove snapd
 sudo apt remove firefox snapd
 sudo apt purge firefox snapd
+sudo apt-mark hold snapd
 ```
 
 ```
 # Remove uutils and use good ol' GNU
 sudo apt install --allow-remove-essential coreutils-from-gnu coreutils-from-uutils-
 sudo apt remove rust-coreutils
-echo rust-coreutils hold | sudo dpkg --set-selections
+sudo apt-mark hold rust-coreutils
 ```
