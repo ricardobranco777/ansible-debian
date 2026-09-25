@@ -80,6 +80,8 @@
       - saned
       - sssd
       - thunderbird
+      # Comment if you rely on rootless containers
+      - uidmap
     state: absent
     purge: true
 
